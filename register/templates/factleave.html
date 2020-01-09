@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>facultyhome</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/style2.css'%}">
+		<style>
+		</style>  
+	</head>
+	<body class="b">
+		<div class="menubar">
+		<ul>
+		<li><a href="admin.html">Apply Leave</a></li>
+		</ul>
+		</div>
+		<div class="cont">
+		<form action="{% url 'factleave' %}" method= "POST">
+			{% csrf_token %} 
+			<h3><center><font color="white">faculty leave</center></font></h3><br>  
+		<h3>Name:</h3>
+		<input type="text" class="frm" name="name" placeholder="name">
+		<h3>To:<h3>
+		<input type="text" class="frm" name="to" placeholder="to">
+		<h3>Leave reason:</h3>
+		<input type="text" class="frm" name="leavereason" placeholder="leavereason">
+		<h3>From date:<h3>
+		<input type="date" class="frm" name="fromdate" placeholder="fromdate">
+		<h3>To date:<h3>
+		<input type="date" class="frm" name="todate" placeholder="todate">
+		<center><input type="submit" name="submit" class="frm-btn" value="Submit"></center>
+		</form>
+		</div>
+		</body>
+		</html>

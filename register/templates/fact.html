@@ -1,0 +1,52 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+<link rel="stylesheet" href="{% static 'css/style3.css' %}">
+<style>
+</style>
+
+</head>
+<body class="b1">
+<div class="navbar">
+<ul>
+
+<li><font color="white">Edit</font>
+<div class="submenu">
+<ul>
+<li><a href="{% url 'password' %}">password</a></li>
+<li><a href="{% url 'mobile' %}">mobile</a></li>
+<li><a href="{% url 'email' %}">email</a></li>
+
+</ul>
+</div> 
+</li>
+<li><a href="{% url 'logout'%}">Logout</a></li>
+</ul>
+</div>
+
+<form action="{% url 'fact' %}" method="POST">
+    {% csrf_token %} 
+
+
+<div class="cont">
+
+<li><a href="{% url 'facultyreg' %}">faculty registration</li></a>  
+<li><a href="{% url 'factattend' %}"> faculty Attendance</a></li>
+<li><a href="{% url 'factleave' %}">apply leave</a></li>
+<li><a href="{% url 'studentmark' %}">student mark</a></li>
+ <li><a href="{% url 'studentreg' %}">Student registration</a></li>
+
+</form>
+</div>
+
+
+
+<br><br><br><div class="ft">
+<footer >
+<p>&copy 2018-2019 company inc.</p>
+</footer>
+</div>
+</body>
+</html>

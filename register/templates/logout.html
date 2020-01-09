@@ -1,0 +1,48 @@
+{% load static %}<!Doctype html>
+<html>
+<head>
+<title>index</title>
+
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+<style></style>
+</head>
+<body class="b1">
+<!---------------------------------menubar-------------->
+
+<div class="navbar">
+<ul>
+<li><H2>WELCOME</H2></a></li>
+</ul>
+</div>
+
+<!-- menubar end -->
+<!-- content start -->
+
+
+
+<div class="log">
+<form action="{% url 'submit' %}" method="POST" >
+    {% csrf_token %}
+<input type="text"      class="frm" placeholder="username" name="username">
+<input type="password"  class="frm" placeholder="password" name="password">
+<input type="submit"    class="bt" value="send" name="submit">
+</form>
+</div>
+
+ 
+<!-- content end -->
+<!-- footer start -->
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+    <div class="ft">
+    <footer>
+    <p>&copy 2018-2019 copy company Inc.</p>
+    </footer>
+ </div>   
+<!-- footer end -->
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="{% static 'css/style5.css' %}">
+
+<style>
+</style>
+</head>
+<body class="b">
+<div class="menubar">
+<ul>
+<li>Admin page</a></li>
+</ul>
+</div>
+<form >
+<div class="cont">
+<form action="{% url 'addfact' %}" method="POST" >
+    {% csrf_token %}
+
+<h3>Add faculty:</h3>
+<form>
+<center><button formaction="{% url 'addfact' %}" class="btn">add faculty</center>
+</form>
+<h3>View faculty:<h3>
+<form action="{% url 'viewfac' %}" method="POST" >
+        {% csrf_token %}
+<center><input type="submit" class="btn" name="Viewfac" value="view faculty"></center>
+
+
+<h3>View student:</h3>
+<form action="{% url 'view_stud' %}" method="POST" >
+    {% csrf_token %}
+<center><input type="submit" class="btn" name="View_stud" value="view student"></center>
+</form>
+
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+<link rel="stylesheet" href="{% static 'css/style3.css' %}">
+<style>
+</style>
+
+</head>
+<body class="b1">
+<div class="navbar">
+<ul>
+
+<li><a href="edit.html">Edit</a>
+<div class="submenu">
+</div>
+
+
+<div class="submenu">
+<ul>
+    <li><a href="{% url 'password' %}">password</a></li>
+    <li><a href="{% url 'mobile' %}">mobile</a></li>
+    <li><a href="{% url 'email' %}">email</a></li>
+    
+
+</ul>
+</div> 
+</li>
+<li><a href="{% url 'logout'%}">Logout</a>
+</ul>
+
+</div>
+<form action="{% url 'student'%}" method="POST">
+    {% csrf_token %} 
+<div class="cont">
+ 
+<li><a href="{% url 'personaldetails' %}">my profile</li></a>  
+<li><a href="{% url 'marks' %}">mark</a></li>
+<li><a href="{% url 'stdattend' %}">Attendance</a></li>
+<li><a href="{% url 'leave' %}">apply leave</a></li>
+</form>
+</div>
+<div>
+    {%if authors%}
+    {%for i in authors%}
+    <h1>{{i.name}}</h1>
+    
+
+    <table>
+
+        <tr>
+            
+        </tr>
+        <tr>
+            <td>student id</td><td>:</td><td>{{i.stdid}}</td>
+        </tr>
+        <tr>
+            <td>Admissionno</td><td>:</td><td>{{i.admnno}}</td>
+        </tr>
+        <tr>
+            <td>name</td><td>:</td><td>{{i.name}}</td>
+        </tr>
+        <tr>
+            <td>address</td><td>:</td><td>{{i.address}}</td>
+        </tr>
+        <tr>
+            <td>dob</td><td>:</td><td>{{i.dob}}</td>
+        </tr>
+        
+        <tr>
+            <td>gender</td><td>:</td><td>{{i.gender}}</td>
+        </tr>
+        <tr>
+            <td>mobile</td><td>:</td><td>{{i.mobile}}</td>
+        </tr>
+        <tr>
+            <td>admissiondate</td><td>:</td><td>{{i.admdate}}</td>
+        </tr>
+        <tr>
+            <td>guardian</td><td>:</td><td>{{i.guardian}}</td>
+        </tr>
+        <tr>
+            <td>batch</td><td>:</td><td>{{i.batch}}</td>
+        </tr>
+        <tr>
+            <td>email</td><td>:</td><td>{{i.email}}</td>
+        </tr>
+        <tr>
+            <td>password</td><td>:</td><td>{{i.password}}</td>
+        </tr>
+    </table>
+
+
+
+    {%endfor %}
+    {%endif %}
+</div>
+
+<div class="ft">
+<footer >
+<p>&copy 2018-2019 company inc.</p>
+</footer>
+</div>
+</body>
+</html>
